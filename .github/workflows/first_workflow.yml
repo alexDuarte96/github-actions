@@ -34,4 +34,13 @@ jobs:
         run: |
           echo "Windows Latest"
           Get-Date
+  thirdOne:
+    needs: [firstOne, secondOne]
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: MacOs
+        run: |
+          echo "MacOS Latest"
+          echo echo $(date)
 
