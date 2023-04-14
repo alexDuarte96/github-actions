@@ -1,0 +1,29 @@
+# This is a basic workflow to help you get started with Actions
+name: getDatesWithAllEnvironments
+
+# Controls when the workflow will run.
+on: push
+
+# Variable Names on Env
+env:
+  FILE_NAME: "myArtifact"
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  makingTheArtifact:
+    # The type of runner that the job will run on
+    runs-on: macos-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Checkout
+        uses: actions/upload-artifact@v3.1.2
+        with:
+          name: ./{{ $env.FILE_NAME }}.log
+      
+
+
+
