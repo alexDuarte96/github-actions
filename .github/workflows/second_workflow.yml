@@ -22,7 +22,7 @@ jobs:
       - name: Checkout
         uses: actions/upload-artifact@v3.1.2
         with:
-          name: "{{ $env.FILE_NAME }}.log"
+          name: "${{ env.FILE_NAME }}.log"
           path: "./"
       
 
